@@ -1,0 +1,76 @@
+// components/Topbar.tsx
+import { useLocation } from 'react-router-dom';
+
+export default function Topbar() {
+  const location = useLocation();
+  
+  const getTitle = () => {
+    if (location.pathname === '/academics') return 'Academics Dashboard';
+    if (location.pathname.includes('/students')) return 'Students Management';
+    if (location.pathname.includes('/sections')) return 'Sections';
+    if (location.pathname.includes('/meetlinks')) return 'Meet Links';
+    if (location.pathname.includes('/attendance')) return 'Attendance';
+    if (location.pathname.includes('/teachers')) return 'Faculty Management';
+    if (location.pathname.includes('/courses')) return 'Courses Management';
+    if (location.pathname.includes('/assessment')) return 'Assessment';
+    if (location.pathname.includes('/fees')) return 'Fee Management';
+    return 'Academics Dashboard';
+  };
+  
+
+  return (
+    <div style={{
+      height: '56px',
+      background: '#ffffff',
+      borderBottom: '1px solid #e2e8f0',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '0 20px',
+      boxShadow: '0 1px 2px rgba(0,0,0,0.03)',
+    }}>
+      <h1 style={{ 
+        fontSize: '18px', 
+        fontWeight: 600, 
+        color: '#0f172a',
+        margin: 0,
+      }}>
+        {getTitle()}
+      </h1>
+      
+      <div style={{ display: 'flex', gap: '8px' }}>
+        {/* Academic Year Badge */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
+          padding: '4px 12px',
+          background: '#dcfce7',
+          borderRadius: '20px',
+          fontSize: '12px',
+          fontWeight: 500,
+          color: '#16a34a',
+        }}>
+          <span>📅</span>
+          <span>2025-2026</span>
+        </div>
+        
+        {/* Term Badge */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
+          padding: '4px 12px',
+          background: '#fef3c7',
+          borderRadius: '20px',
+          fontSize: '12px',
+          fontWeight: 500,
+          color: '#d97706',
+        }}>
+          <span>🎓</span>
+          <span>Spring 2025</span>
+        </div>
+      </div>
+    </div>
+  );
+}
