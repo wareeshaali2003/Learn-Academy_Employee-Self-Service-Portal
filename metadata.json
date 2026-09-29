@@ -1,0 +1,8 @@
+{
+  "name": "Evergreen Employee Portal",
+  "description": "A comprehensive Employee Self-Service (ESS) portal for Evergreen International Academy featuring leave management, attendance tracking, salary slips, and profile management.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
